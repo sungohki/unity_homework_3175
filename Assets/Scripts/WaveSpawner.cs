@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -19,7 +17,13 @@ public class WaveSpawner : MonoBehaviour
     }
 
     void Spawn() {
-        GameObject enemyIns = Instantiate(enemyPrefab, transform.position, transform.rotation);
+        float randomX = Random.Range(-10.0f, 10.0f); 
+        float randomY = Random.Range(-10.0f, 10.0f); 
+        float randomZ = Random.Range(-10.0f, 10.0f); 
+        Vector3 origin = transform.position;
+        
+        Vector3 randomPosition = new Vector3(origin.x + randomX, origin.y + randomY, origin.z + randomZ);
+        GameObject enemyIns = Instantiate(enemyPrefab, randomPosition, transform.rotation);
         Destroy(enemyIns, destoryTime);
     }
 }
