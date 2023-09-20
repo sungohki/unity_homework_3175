@@ -5,7 +5,7 @@ public class CameraMove : MonoBehaviour
     [SerializeField] float sensitivity = 2.0f; // 마우스 감도 조절 변수
 
     [SerializeField] float rotationX = 0.0f; // X 축 회전 각도 변수
-    [SerializeField] float rotationY = 0.0f; // X 축 회전 각도 변수
+    [SerializeField] float rotationY = 0.0f; // Y 축 회전 각도 변수
 
     void Start()
     {
@@ -29,6 +29,6 @@ public class CameraMove : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
 
         // 카메라 회전
-        transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
+        // transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
     }
 }
