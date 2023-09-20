@@ -9,6 +9,7 @@ public class CameraMove : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked; // 게임 시작 시 마우스 커서를 화면 중앙에 고정
     }
 

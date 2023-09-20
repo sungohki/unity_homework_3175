@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Vars
+    [SerializeField] private float enemySpd = 10.0f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(0, 0, enemySpd * Time.deltaTime * Random.Range(0.5f, 1.8f));
     }
 }
