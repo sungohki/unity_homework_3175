@@ -3,7 +3,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    private int amount;
+    [SerializeField] private int amount = 10;
 
     void Awake() {
         if (instance == null){
@@ -13,4 +13,12 @@ public class ScoreManager : MonoBehaviour
             print("Duplicated ScoreManager, Ignoring this one");
         }
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void addAmount(int num) {
+        amount += num;
+    } 
 }
