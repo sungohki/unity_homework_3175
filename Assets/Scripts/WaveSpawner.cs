@@ -5,7 +5,7 @@ public class WaveSpawner : MonoBehaviour
     // Vars
     [SerializeField] public GameObject enemyPrefab;
     [SerializeField] public float startTime = 2.0f;
-    [SerializeField] public float endTime = 10.0f;
+    [SerializeField] public float endTime = 12.0f;
     [SerializeField] public float spawnRate = 2.0f;
     [SerializeField] public float destroyTime = 4.0f;
 
@@ -32,7 +32,7 @@ public class WaveSpawner : MonoBehaviour
 
     void DestroyEnemy(GameObject enemy) {
         Destroy(enemy, destroyTime);
-        GetComponent<ScoreManager>().addAmount(-2);
+        ScoreManager.instance.addAmount(-2);
     }
 
     void EndSpawner() {

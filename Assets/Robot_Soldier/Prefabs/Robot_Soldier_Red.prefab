@@ -77,7 +77,6 @@ GameObject:
   - component: {fileID: -2330103015114007320}
   - component: {fileID: 3281125169932806468}
   - component: {fileID: 6657139244701877634}
-  - component: {fileID: 5828640691839579188}
   m_Layer: 0
   m_Name: Robot_Soldier_Red
   m_TagString: Untagged
@@ -200,18 +199,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9abdc2fa9071ecf4e836790c795464f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5828640691839579188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047724519691324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865b127ef5d1f6d4a8c189f156017212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1055265541920024

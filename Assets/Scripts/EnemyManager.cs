@@ -8,11 +8,15 @@ public class EnemyManager : MonoBehaviour
     public List<Enemy> enemies;
     public UnityEvent onChanged;
 
-    void Awake() {
+    private void Awake() {
         if (instance == null)
             instance = this;
         else
             Debug.LogError("Duplicated EnemyManager", gameObject);
+            
+        if (onChanged == null)
+            onChanged = new UnityEvent();
+        // onChanged.AddListener(() => {Debug.Log("test");});
     }
 
     public void AddEnemy(Enemy enemy) {
