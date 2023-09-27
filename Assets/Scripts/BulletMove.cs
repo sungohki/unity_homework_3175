@@ -16,5 +16,9 @@ public class BulletMove : MonoBehaviour
         if (other.GetComponent<ObjectLife>()) {
             other.GetComponent<ObjectLife>().addLifePoint(bulletDmg);
         }
+        if (other.tag == "Enemy"){
+            Debug.Log("enemy destroyed!!");
+            Destroy(other);
+        }
     }
 }
