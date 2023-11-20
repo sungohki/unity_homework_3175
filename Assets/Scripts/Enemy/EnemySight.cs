@@ -1,9 +1,10 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemySight : MonoBehaviour
 {
-    public float distance;
+    public float distance = 10.0f;
     public float angle;
     public LayerMask objectsLayers;
     public LayerMask obstaclesLayers;
@@ -13,6 +14,7 @@ public class EnemySight : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(
             transform.position, distance, (int)objectsLayers
         );
+        // 구 내부에 존재하는 모든 콜라이더를 배열로 반환
 
         detectedObject = null;
         for (int i = 0; i < colliders.Length; i++) {
@@ -27,16 +29,35 @@ public class EnemySight : MonoBehaviour
             );
 
             if (angleToCollider < angle) {
+                // Viewing Angle Filter
                 if (!Physics.Linecast(transform.position, collider.bounds.center, (int)obstaclesLayers)) {
+                    // Occulusion Filter
                     detectedObject = collider;
                     break;
                 }
             }
+
+            if (!Physics.Linecast(transform.position, collider.bounds.center, out RaycastHit hit, obstaclesLayers)) {
+                Debug.DrawLine(transform.position, collider.bounds.center, Color.green);
+                detectedObject = collider;
+                break;
+            } else {
+                Debug.DrawLine(transform.position, hit.point, Color.red);
+            }
         }
+
+        Vector3 rightDirection = Quaternion.Euler(0, angle, 0) * transform.forward;
+        Gizmos.DrawRay(transform.position, rightDirection * distance);
+
+        Vector3 leftDirection = Quaternion.Euler(0, -angle, 0) * transform.forward;
+        Gizmos.DrawRay(transform.position, leftDirection * distance);
+
     }
 
-    private void OnDrawGizmos() {
+    void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distance);
     }
+
+
 }

@@ -23,6 +23,7 @@ public class WaveGameMode : MonoBehaviour
 
     public void CheckWinCondition() {
         Debug.Log("Check Win");
+        // if (EnemyManager.instance.enemies.Count <= 0)
         if (EnemyManager.instance.enemies.Count <= 0 && WavesManager.instance.waves.Count <= 0)
             SceneManager.LoadScene("WinScreen");
     } 
