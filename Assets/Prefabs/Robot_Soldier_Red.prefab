@@ -2903,6 +2903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7388796231582388294}
   - component: {fileID: 2551668395859856641}
+  - component: {fileID: 975824788829405881}
   m_Layer: 7
   m_Name: AI
   m_TagString: Untagged
@@ -2937,12 +2938,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d448342b0d3a8a488ea1f4a3cc5e9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
-  angle: 0
+  distance: 7
+  angle: 45
   objectsLayers:
     serializedVersion: 2
     m_Bits: 64
   obstaclesLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   detectedObject: {fileID: 0}
+--- !u!114 &975824788829405881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384083100374952637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8d230dbe25f7343ba22b8d7c5a0833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currnetState: 0
+  sightSensor: {fileID: 2551668395859856641}
+  baseTransform: {fileID: 5415071774625511688, guid: 3a52fb56a5ace0a4b8a0e41d24a7ead6,
+    type: 3}
+  baseAttackDistance: 2
+  playerAttackDistance: 3

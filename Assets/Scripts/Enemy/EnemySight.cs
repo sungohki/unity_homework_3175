@@ -51,10 +51,10 @@ public class EnemySight : MonoBehaviour
 
         Vector3 leftDirection = Quaternion.Euler(0, -angle, 0) * transform.forward;
         Gizmos.DrawRay(transform.position, leftDirection * distance);
-
     }
 
     void OnDrawGizmos() {
+        // wireSphere을 출력하는 상태 함수
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distance);
     }
