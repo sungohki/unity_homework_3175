@@ -30,33 +30,28 @@ public class EnemySight : MonoBehaviour
 
             if (angleToCollider < angle) {
                 // Viewing Angle Filter
-                if (!Physics.Linecast(transform.position, collider.bounds.center, (int)obstaclesLayers)) {
+                if (!Physics.Linecast(transform.position, collider.bounds.center, out RaycastHit hit, obstaclesLayers)) {
                     // Occulusion Filter
+                    Debug.DrawLine(transform.position, collider.bounds.center, Color.green);
                     detectedObject = collider;
                     break;
+                } else {
+                    Debug.DrawLine(transform.position, hit.point, Color.red);
                 }
             }
-
-            if (!Physics.Linecast(transform.position, collider.bounds.center, out RaycastHit hit, obstaclesLayers)) {
-                Debug.DrawLine(transform.position, collider.bounds.center, Color.green);
-                detectedObject = collider;
-                break;
-            } else {
-                Debug.DrawLine(transform.position, hit.point, Color.red);
-            }
         }
-
-        Vector3 rightDirection = Quaternion.Euler(0, angle, 0) * transform.forward;
-        Gizmos.DrawRay(transform.position, rightDirection * distance);
-
-        Vector3 leftDirection = Quaternion.Euler(0, -angle, 0) * transform.forward;
-        Gizmos.DrawRay(transform.position, leftDirection * distance);
     }
 
     void OnDrawGizmos() {
         // wireSphere을 출력하는 상태 함수
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distance);
+
+        Vector3 rightDirection = Quaternion.Euler(0, angle, 0) * transform.forward;
+        Gizmos.DrawRay(transform.position, rightDirection * distance);
+
+        Vector3 leftDirection = Quaternion.Euler(0, -angle, 0) * transform.forward;
+        Gizmos.DrawRay(transform.position, leftDirection * distance);
     }
 
 

@@ -73,9 +73,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4953570177729582}
   - component: {fileID: 95066877497174294}
-  - component: {fileID: -2463152039346416637}
   - component: {fileID: -2330103015114007320}
   - component: {fileID: 3281125169932806468}
+  - component: {fileID: -2463152039346416637}
   - component: {fileID: 6657139244701877634}
   m_Layer: 0
   m_Name: Robot_Soldier_Red
@@ -129,19 +129,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2463152039346416637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1047724519691324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6fcfa3489a8754bbc599c7ad5994b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpd: 15
 --- !u!54 &-2330103015114007320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -190,6 +177,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.8332523, z: 1}
   m_Center: {x: 0, y: 0.9129335, z: 0}
+--- !u!114 &-2463152039346416637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047724519691324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6fcfa3489a8754bbc599c7ad5994b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpd: 15
 --- !u!114 &6657139244701877634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2921,7 +2921,7 @@ Transform:
   m_GameObject: {fileID: 3384083100374952637}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.661, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2964,5 +2964,6 @@ MonoBehaviour:
   sightSensor: {fileID: 2551668395859856641}
   baseTransform: {fileID: 5415071774625511688, guid: 3a52fb56a5ace0a4b8a0e41d24a7ead6,
     type: 3}
-  baseAttackDistance: 2
-  playerAttackDistance: 3
+  playerChaseDistance: 0
+  playerAttackDistance: 5
+  player: {fileID: 1969956937002100613, guid: e05ca936cdf88a1469bbe9fd2f6b40c0, type: 3}

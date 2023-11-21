@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnDestroy() {
-        Instantiate(particlePrefab, transform.position, transform.rotation);
+        GameObject temp = Instantiate(particlePrefab, transform.position, transform.rotation);
+        Destroy(temp, 4.0f);
         EnemyManager.instance.RemoveEnemy(this);
     }
 }
